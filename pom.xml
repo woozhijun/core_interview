@@ -22,8 +22,11 @@ under the License.
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.woozhijun.interview</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>interview</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>design-pattern</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>core interview</name>
