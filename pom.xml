@@ -25,7 +25,9 @@ under the License.
     <artifactId>interview</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>design-pattern</module>
+        <module>designpatterns</module>
+        <module>structure</module>
+        <module>application</module>
     </modules>
     <packaging>pom</packaging>
 

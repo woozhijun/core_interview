@@ -1,3 +1,5 @@
+package com.woozhijun.application.example;
+
 /**
  * @Author: wuzhijun
  * @Date: 2020/10/18 23:16

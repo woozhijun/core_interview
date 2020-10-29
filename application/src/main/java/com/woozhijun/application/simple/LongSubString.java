@@ -1,3 +1,5 @@
+package com.woozhijun.application.simple;
+
 import java.util.HashSet;
 
 /**

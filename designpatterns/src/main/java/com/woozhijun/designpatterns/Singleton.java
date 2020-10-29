@@ -1,3 +1,5 @@
+package com.woozhijun.designpatterns;
+
 /**
  * @Author: wuzhijun
  * 单例模式，双重校验
