@@ -39,6 +39,28 @@ public class StringOperator {
         return num * symbol;
     }
 
+    /**
+     * 字符串相加
+     * @param n1
+     * @param n2
+     * @return
+     */
+    public String addString(String n1, String n2) {
+        int i = n1.length() - 1, j = n2.length() - 1, add = 0;
+        StringBuffer sb = new StringBuffer();
+        while (i >= 0 || j >= 0 || add != 0) {
+            int x = i >= 0 ? n1.charAt(i) - '0' : 0;
+            int y = j >= 0 ? n2.charAt(j) - '0' : 0;
+            int result = x + y + add;
+            sb.append(result % 10);
+            add = result / 10;
+            i--;
+            j--;
+        }
+        sb.reverse();
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         try {
             System.out.println(parserStringToInt("10"));
