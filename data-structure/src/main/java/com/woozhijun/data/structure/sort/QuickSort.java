@@ -1,4 +1,4 @@
-package com.woozhijun.structure.sort;
+package com.woozhijun.data.structure.sort;
 
 /**
  * @Author: wuzhijun

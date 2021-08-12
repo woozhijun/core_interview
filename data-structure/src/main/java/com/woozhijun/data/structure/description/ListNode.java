@@ -1,4 +1,4 @@
-package com.woozhijun.structure.description;
+package com.woozhijun.data.structure.description;
 
 import java.util.Stack;
 

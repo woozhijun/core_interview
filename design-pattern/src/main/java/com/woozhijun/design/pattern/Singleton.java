@@ -1,4 +1,4 @@
-package com.woozhijun.designpatterns;
+package com.woozhijun.design.pattern;
 
 /**
  * @Author: wuzhijun
