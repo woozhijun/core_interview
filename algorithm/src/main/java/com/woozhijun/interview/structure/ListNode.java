@@ -1,4 +1,4 @@
-package com.woozhijun.data.structure.description;
+package com.woozhijun.interview.structure;
 
 import java.util.Stack;
 
@@ -7,8 +7,8 @@ import java.util.Stack;
  * @Date: 2020/10/30 01:34
  */
 public class ListNode {
-    private Object data;
-    private ListNode next;
+    public Object data;
+    public ListNode next;
 
     /**
      * 使用栈 方法一

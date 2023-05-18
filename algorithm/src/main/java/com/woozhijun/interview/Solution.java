@@ -1,4 +1,4 @@
-package com.woozhijun.algorithm;
+package com.woozhijun.interview;
 
 import java.util.ArrayList;
 import java.util.Arrays;

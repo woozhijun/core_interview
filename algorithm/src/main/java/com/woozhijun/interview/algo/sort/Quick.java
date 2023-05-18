@@ -1,8 +1,8 @@
-package com.woozhijun.algorithm.sort;
+package com.woozhijun.interview.algo.sort;
 
 /**
  * @author wuzj
- * �������� ����O(n2) ƽ��ʱ�临�Ӷ�O(NlogN)
+ * 快速排序
  */
 public class Quick {
 	
@@ -13,22 +13,20 @@ public class Quick {
 		
 		quickSort(0, num.length - 1, num);
 		for (int i = 0; i < num.length; i++) {
-			
-//			// ���ȥ��
-//			if (i == 0) {
-//				System.out.print(num[i] + " ");
-//			}
-//			if (i > 0 && num[i] != num[i - 1]) {
-//				System.out.print(num[i] + " ");
-//			}
 			System.out.print(num[i] + " ");
 		}
 		long endTime = System.currentTimeMillis();
 		System.out.println("\n" + (endTime - startTime));
 	}
-	
+
+
+	/**
+	 * 迭代 快排
+	 * @param left
+	 * @param right
+	 * @param num
+	 */
 	public static void quickSort(int left, int right, int[] num) {
-	
 		int i = left;
 		int j = right;
 		if (left > right) {

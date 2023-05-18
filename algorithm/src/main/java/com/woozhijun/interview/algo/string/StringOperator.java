@@ -1,4 +1,4 @@
-package com.woozhijun.application.simple;
+package com.woozhijun.interview.algo.string;
 
 import org.apache.commons.lang3.StringUtils;
 

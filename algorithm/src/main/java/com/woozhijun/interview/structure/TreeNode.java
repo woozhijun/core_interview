@@ -1,4 +1,4 @@
-package com.woozhijun.data.structure.description;
+package com.woozhijun.interview.structure;
 
 import java.util.*;
 
@@ -7,10 +7,10 @@ import java.util.*;
  * @Date: 2020/10/30 01:34
  */
 public class TreeNode {
-    private Object data;
-    private TreeNode left;
-    private TreeNode right;
-    private TreeNode next;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode next;
 
     /**
      *  递归:  翻转二叉树
@@ -121,7 +121,7 @@ public class TreeNode {
         if (root == null) {
             return res;
         }
-        res.add(root.data);
+        res.add(root.val);
         postOrderRecur(root.left);
         postOrderRecur(root.right);
         return res;
@@ -136,7 +136,7 @@ public class TreeNode {
         TreeNode node = root;
         while (!stack.isEmpty() || node != null) {
             while (node != null) {
-                res.add(node.data);
+                res.add(node.val);
                 stack.push(node);
                 node = node.left;
             }
@@ -158,11 +158,40 @@ public class TreeNode {
                 root = root.left;
             }
             root = stk.pop();
-            res.add(root.data);
+            res.add(root.val);
             if (root.right != null) {
                 root = root.right;
             }
         }
         return res;
+    }
+
+    /**
+     * 层序遍历(从左到右)
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> levelOrder = new LinkedList<>();
+        if (root == null) {
+            return levelOrder;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i< size; i++) {
+                TreeNode node = queue.poll();
+                level.add(node.val);
+                TreeNode left = node.left, right = node.right;
+                if (left != null) {
+                    queue.offer(left);
+                }
+                if (right != null) {
+                    queue.offer(right);
+                }
+            }
+            levelOrder.add(level);
+        }
+        return levelOrder;
     }
 }

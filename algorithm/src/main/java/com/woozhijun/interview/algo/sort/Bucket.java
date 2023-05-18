@@ -1,4 +1,4 @@
-package com.woozhijun.algorithm.sort;
+package com.woozhijun.interview.algo.sort;
 
 import java.util.Random;
 

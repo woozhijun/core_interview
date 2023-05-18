@@ -1,10 +1,12 @@
-package com.woozhijun.application.example;
+package com.woozhijun.interview.algo.dynamic;
 
 /**
+ * 爬楼梯 - 动态规划
  * @Author: wuzhijun
  * @Date: 2020/10/18 23:16
  */
 public class ClimbStairs {
+
     public static int fromType(int n) {
         int step1 = 1;
         int step2 = 2;
@@ -20,6 +22,22 @@ public class ClimbStairs {
             return temp;
         }
     }
+
+    /**
+     * 动态规划 构建 f(x)=f(x−1)+f(x−2)
+     * @param n
+     * @return
+     */
+    public static int fromType2(int n) {
+        int p = 0, q = 0, r = 1;
+        for (int i = 1; i <= n; ++i) {
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
+    }
+
 
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i ++) {
