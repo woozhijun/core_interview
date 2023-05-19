@@ -103,7 +103,6 @@ public class TreeNode {
             prev.right = curr;
         }
     }
-
     private void preorderTraversal(TreeNode root, List<TreeNode> list) {
         if (root != null) {
             list.add(root);
@@ -112,21 +111,25 @@ public class TreeNode {
         }
     }
 
-
     /**
-     * 二叉树 前序遍历 lc:144
+     * 二叉树 前序遍历 lc:144 (递归)
      */
-    public List<Object>  postOrderRecur(TreeNode root) {
+    public List<Object>  preOrderRecursion(TreeNode root) {
         List<Object> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
         res.add(root.val);
-        postOrderRecur(root.left);
-        postOrderRecur(root.right);
+        preOrderRecursion(root.left);
+        preOrderRecursion(root.right);
         return res;
     }
 
+    /**
+     * 二叉树 前序遍历 (迭代)
+     * @param root
+     * @return
+     */
     public List<Object> preOrderIteration(TreeNode root) {
         List<Object> res = new ArrayList<>();
         if (root == null) {
@@ -143,6 +146,22 @@ public class TreeNode {
             node = stack.pop();
             node = node.right;
         }
+        return res;
+    }
+
+    /**
+     * 二叉树 后序遍历 lc:145 (递归)
+     * @param root
+     * @return
+     */
+    public List<Integer> postOrderRecursion(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        postOrderRecursion(root.left);
+        postOrderRecursion(root.right);
+        res.add(root.val);
         return res;
     }
 

@@ -90,4 +90,19 @@ public class ListNode {
         head.next = newHead;
         return reverseListInt(next, head);
     }
+
+    /**
+     * 链表节点 两两交换
+     * @param head
+     * @return
+     */
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
+    }
 }
