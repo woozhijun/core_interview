@@ -1,10 +1,14 @@
 package com.woozhijun.interview.algo.string;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
  * @Author: wuzhijun
  * @Date: 2020/10/18 23:53
+ * @Desc  最长子串+长度(不同字符) 问题
  */
 public class LongSubString {
 
@@ -65,5 +69,70 @@ public class LongSubString {
         System.out.println(ss.longestDupSubstring("banana"));
         System.out.println(ss.longestDupSubstring("123456"));
         System.out.println(ss.longestDupSubstring("bananacncnc"));
+    }
+
+
+    /**
+     * 至多包含K个不同字符的最长子串(滑动窗口 + HashMap)
+     * @param s
+     * @param k
+     * @return
+     */
+    public int lengthOfLongestSubStringForDistinct(String s, int k) {
+        int n = s.length();
+        if (n < k) {
+            return n;
+        }
+        int start = 0, end = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int maxLen = 1;
+        while (end < n) {
+            map.put(s.charAt(end), end++);
+            if (map.size() == k + 1) {
+                int delIdx = Collections.min(map.values());
+                map.remove(s.charAt(delIdx));
+                start = delIdx + 1;
+            }
+            maxLen = Math.max(maxLen, end - start);
+        }
+        return maxLen;
+    }
+
+    /**
+     * 长度为K的无重复字符子串（固定长度的滑动窗口）
+     * @param s
+     * @param k
+     * @return
+     */
+    public int numKLenSubstrNoRepeats(String s, int k) {
+        int n = s.length();
+        if (k > n) {
+            return 0;
+        }
+        int start = 0;
+        int end = n - k;
+        int maxLen = 0;
+
+        return maxLen;
+    }
+
+    /**
+     * 无重复字符的最长子串(滑动窗口 + 哈希)
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int n = s.length();
+        int start = 0, end = 0;
+        int maxLen = 0;
+        while (end < n) {
+            map.put(s.charAt(end), end++);
+            if (map.containsKey(s.charAt(end))) {
+                start = Math.max(map.get(s.charAt(end)), start);
+            }
+            maxLen = Math.max(maxLen, end - start + 1);
+        }
+        return maxLen;
     }
 }
